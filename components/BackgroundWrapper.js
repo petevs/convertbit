@@ -14,7 +14,7 @@ const BackgroundWapper = ({children}) => {
         <Box 
             sx={wrapper}
         >
-            <Container align='center' size='lg'>
+            <Container align='center' size='xs'>
                 {children}
             </Container>
         </Box>

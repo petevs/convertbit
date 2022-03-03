@@ -1,9 +1,10 @@
+import { Box } from "@mantine/core"
 import RowHeader from "./RowHeader"
 import ShortcutRow from "./ShortcutRow"
 
 const Instructions = () => {
   return (
-    <>
+    <Box>
         <RowHeader title='On any website' />
         <ShortcutRow
             shortcut='B'
@@ -19,7 +20,7 @@ const Instructions = () => {
             shortcut='D'
             label='Convert Tweet Date to Bitcoin Price'
         />
-    </>
+    </Box>
   )
 }
 
