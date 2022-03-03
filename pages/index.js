@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { FaBitcoin } from 'react-icons/fa'
 import ReactPlayer from 'react-player'
 import Instructions from '../components/Instructions'
-import OverviewVideo from '../components/OverviewVideo'
+import ResponsiveVideo from '../components/ResponsiveVideo'
 import HeroSection from '../components/HeroSection'
 import Footer from '../components/Footer'
 
@@ -31,7 +31,7 @@ export default function Home() {
 
       <Box sx={{minHeight: 'calc(100vh)'}}>
         <HeroSection />
-        <OverviewVideo />
+        <ResponsiveVideo url='https://www.youtube.com/watch?v=N8IUHnL6FPQ'/>
         <Instructions />
         <Footer />
       </Box>

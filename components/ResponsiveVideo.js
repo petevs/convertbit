@@ -1,12 +1,12 @@
 import { Box } from "@mantine/core"
 import ReactPlayer from "react-player"
 
-const OverviewVideo = () => {
+const ResponsiveVideo = ({url}) => {
   return (
     <Box className='player-wrapper'>
     <ReactPlayer
       className='react-player'
-      url='https://www.youtube.com/watch?v=N8IUHnL6FPQ'
+      url={url}
       width='100%'
       height='100%'
     />
@@ -14,4 +14,4 @@ const OverviewVideo = () => {
   )
 }
 
-export default OverviewVideo
+export default ResponsiveVideo

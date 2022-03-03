@@ -1,4 +1,5 @@
 import { Box, Text, Button } from "@mantine/core"
+import Link from "next/link"
 
 const HeroSection = () => {
 
@@ -35,9 +36,11 @@ const HeroSection = () => {
               >
                 Coming Soon to Chrome Store
               </Button>
-              <Button variant='subtle' color='gray' mt='xs'>
-                Install Developer Version Now
-              </Button>
+              <Link href='/early-access' passHref>
+                <Button variant='subtle' color='gray' mt='xs'>
+                    Install Developer Version Now
+                </Button>
+              </Link>
         </Box>
   )
 }
