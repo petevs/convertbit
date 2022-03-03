@@ -1,8 +1,25 @@
-import { Box, Button, Divider, Group, Kbd, Paper, Text } from '@mantine/core'
+import { Box, Button, Divider, Group, Kbd, Text } from '@mantine/core'
+import { useMediaQuery } from '@mantine/hooks'
 import Head from 'next/head'
 import { FaBitcoin } from 'react-icons/fa'
+import ReactPlayer from 'react-player'
+import Instructions from '../components/Instructions'
+import RowHeader from '../components/RowHeader'
+import ShortcutRow from '../components/ShortcutRow'
 
 export default function Home() {
+
+  const isMobile = useMediaQuery('(max-width: 768px)')
+
+  const buttonBox = {
+    display: 'grid', 
+    gridAutoFlow: isMobile ? 'row' : 'column', 
+    alignItems: 'center', 
+    justifyContent: 'center', 
+    gap: isMobile ? 0 : '1rem',
+  }
+
+
   return (
     <div>
       <Head>
@@ -11,19 +28,25 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Divider mt='lg' />
-        <Box sx={{display: 'grid', gridAutoFlow: 'column', alignItems: 'center', justifyContent: 'center', gap: '1rem'}}>
-           <Text weight={500} m='md' size='sm'> <Kbd>B</Kbd> + <Kbd>Click</Kbd> = Bitcoin</Text>
-           <Text weight={500} size='sm' m='md'> <Kbd>S</Kbd> + <Kbd>Click</Kbd> = Sats</Text>
-           <Text weight={500} size='sm'> <Kbd>D</Kbd> + <Kbd>Click</Kbd> = Tweet Date to Bitcoin Price</Text>
-        </Box>
-        <Divider />
+
+      {/* {
+        !isMobile &&
+        <>
+          <Divider mt='lg' />
+            <Box sx={buttonBox}>
+              <Text weight={500} m='md' size='sm'> <Kbd>B</Kbd> + <Kbd>Click</Kbd> = Bitcoin</Text>
+              <Text weight={500} size='sm' m='md'> <Kbd>S</Kbd> + <Kbd>Click</Kbd> = Sats</Text>
+              <Text weight={500} size='sm'> <Kbd>D</Kbd> + <Kbd>Click</Kbd> = Tweet Date to Bitcoin Price</Text>
+            </Box>
+            <Divider />
+        </>
+      } */}
 
 
         <Box
           sx={{
             display: 'grid',
-            minHeight: 'calc(100vh - 300px)',
+            minHeight: 'calc(100vh - 200px)',
             alignContent: 'start',
             paddingTop: '5rem',
             gridTemplateColumns: '1fr 1fr',
@@ -32,27 +55,35 @@ export default function Home() {
             }
           }}
         >
-            <Box sx={{display: 'grid', justifyItems: 'start', alignContent: 'start'}}
+            <Box sx={{display: 'grid', justifyItems: 'start', alignContent: 'start', paddingBottom: '3rem'}}
             >
               <Text transform='uppercase' align='left'>Free Chrome Extension</Text>
-              <Text sx={{fontSize: '4rem'}} weight={700} align='left'>ConvertBit</Text>
-              <Text size='xl' weight={500} align='left'>
+              <Text sx={{fontSize: '4rem'}} weight={700}>ConvertBit</Text>
+              <Text size={isMobile ? 'lg' : 'xl'} weight={500}>
                 Any price, any webpage. Just click and convert.
               </Text>
               <Button color='orange' mt='xl' size='lg' radius='xl'>
-                Add to Chrome
+                Coming Soon to Chrome
               </Button>
             </Box>
-            <iframe
-              src="https://www.loom.com/embed/3955f5bcd3c640f28db1b8aea351e4a6?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" 
-              width='100%'
-              height='315px'
-              frameBorder="0" 
-              allowFullScreen
-            />
+            <Box className='player-wrapper'>
+              <ReactPlayer
+                className='react-player'
+                url='https://www.youtube.com/watch?v=N8IUHnL6FPQ'
+                width='100%'
+                height='100%'
+              />
+            </Box>
+            <Box>
+            <Instructions />
+            </Box>
         </Box>
     
-      
+        <Group position='center'>
+          <Text>Privacy</Text>
+          <Text>Terms</Text>
+          <Text>Contact</Text>
+        </Group>
     </div>
   )
 }

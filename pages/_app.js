@@ -1,6 +1,7 @@
 import { MantineProvider, ColorSchemeProvider } from '@mantine/core'
 import { useState } from 'react'
 import BackgroundWapper from '../components/BackgroundWrapper'
+import '../styles/responsive-player.css'
 
 
 function MyApp({ Component, pageProps }) {
