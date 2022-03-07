@@ -28,19 +28,16 @@ const HeroSection = () => {
               >
                 Any price, any webpage. <br/>Just click to convert to bitcoin.
               </Text>
-              <Button 
+              <Button
+                component='a'
+                href='https://chrome.google.com/webstore/detail/convertbit/hecmaedlpeijljoimapdkpdhbjeccejb' 
                 color='orange' 
                 mt='xl' 
                 radius='xl'
                 size='lg'
               >
-                Coming Soon to Chrome Store
+                Add to Chrome
               </Button>
-              <Link href='/early-access' passHref>
-                <Button variant='subtle' color='gray' mt='xs'>
-                    Install Developer Version Now
-                </Button>
-              </Link>
         </Box>
   )
 }
